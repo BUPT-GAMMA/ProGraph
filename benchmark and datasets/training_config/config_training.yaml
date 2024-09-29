@@ -1,0 +1,64 @@
+# the total amount of compute and the type of resources used
+# NVIDIA A100-SXM4-40GB x4
+
+# Model arguments
+# model_name_or_path: /checkpoints/Meta-Llama-3-8B-Instruct
+# model_name_or_path: /checkpoints/Deepseek-Instruct-7B
+model_revision: main
+torch_dtype: bfloat16
+use_flash_attention_2: true
+
+# LoRA arguments
+load_in_4bit: true
+use_peft: true
+lora_r: 16
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target_modules:
+- q_proj
+- k_proj
+- v_proj
+- o_proj
+- gate_proj
+- up_proj
+- down_proj
+
+# Data training arguments
+# chat_template: "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ bos_token + '[INST] ' + message['content'].strip() + ' [/INST]' }}{% elif message['role'] == 'assistant' %}\n{{ message['content'].strip() + eos_token }}{% endif %}\n{% endfor %}"
+dataset_mixer:
+  /datasets/code_datas or doc+code datasets: 1.0
+dataset_splits:
+- train
+- test
+preprocessing_num_workers: 4
+
+# SFT trainer config
+bf16: true
+do_eval: true
+evaluation_strategy: "no"
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+hub_model_id: zephyr-7b-sft-qlor1
+hub_strategy: every_save
+learning_rate: 2.0e-04
+log_level: info
+logging_steps: 1
+logging_strategy: steps
+lr_scheduler_type: cosine
+max_seq_length: 4096
+max_steps: -1
+num_train_epochs: 4
+output_dir: data/your_output_dir
+overwrite_output_dir: true
+per_device_eval_batch_size: 4
+per_device_train_batch_size: 1
+push_to_hub: false
+report_to:
+- wandb
+save_strategy: "steps"
+save_steps: 50
+save_total_limit: 1
+seed: 42
+warmup_ratio: 0.1
