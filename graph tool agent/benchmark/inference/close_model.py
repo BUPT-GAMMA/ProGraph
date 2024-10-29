@@ -393,7 +393,7 @@ def main():
     df_new = df_input
     
     df_new[selected_model_name] = merged_data
-    result_file_name = '../benchmark/evaluation/' + selected_model_name + '/' + 'rag_' + str(selected_top_k) + '_' + selected_lib_name
+    result_file_name = '../results/' + selected_model_name + '/' + 'rag_' + str(selected_top_k) + '_' + selected_lib_name
     
     ensure_directory_exists(result_file_name)
     

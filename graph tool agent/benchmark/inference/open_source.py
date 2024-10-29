@@ -464,7 +464,7 @@ def main():
             
         peft_model = PeftModel.from_pretrained(model, peft_model_path).to(device)
         
-    output_dir = '../benchmark/evaluation/' + model_name + '/' + model_setting + '_top_k_' + str(top_k)
+    output_dir = '../results/' + model_name + '/' + model_setting + '_top_k_' + str(top_k)
     os.makedirs(output_dir, exist_ok=True)
 
     process_file(df_input, output_dir, model_name, top_k)
