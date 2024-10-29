@@ -1,4 +1,4 @@
 # ProGraph
 Official Repository of "Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models". NeurIPS 2024
 
-Code and models are coming soon.
+shell and tutorials are coming soon.

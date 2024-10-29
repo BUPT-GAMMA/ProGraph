@@ -13,13 +13,13 @@ from tqdm import tqdm
 import threading
 from tenacity import retry, wait_exponential, stop_after_attempt
 
-os.environ['OPENAI_API_KEY'] = 'sk-mqXSqgGiRTr2yotrA56e0d9195234dF089B42b0c1cD5FdE8'
-os.environ['OPENAI_API_BASE'] = 'https://yeysai.com/v1'
-os.environ['OPENAI_BASE_URL'] = 'https://yeysai.com/v1/'
+os.environ['OPENAI_API_KEY'] = ''
+os.environ['OPENAI_API_BASE'] = ''
+os.environ['OPENAI_BASE_URL'] = ''
 
 # my own
-openai.api_key = 'sk-jw9PeCAhUNRE41u1D6FfA766C288468cB02998E79bDfE3C1'
-openai.base_url = 'https://dzqc.link/v1/'
+openai.api_key = ''
+openai.base_url = ''
 
 os.environ['INDEX_BUILD_TYPE'] = 'json'
 os.environ['RAG_DATA'] = 'data'
@@ -159,8 +159,8 @@ def gemini_generate_response(question, model_name='gemini-1.0-pro'):
 @retry(wait=wait_exponential(multiplier=1, max=180), stop=stop_after_attempt(30))
 def generate_response(question, model_name = 'gpt-3.5-turbo'):
     
-    openai.api_key = 'sk-ca2Id5Pi0S643XiQ707eDe4573F848C1B2F78740C8513945'
-    openai.base_url = 'https://dzqc.link/v1/'
+    openai.api_key = ''
+    openai.base_url = ''
 
     completion = openai.chat.completions.create(
         model=model_name,

@@ -13,11 +13,11 @@ import pandas as pd
 
 # set openai api key
 # 实验室
-openai.api_key = 'sk-28aiFtKSRK5WIJeUBe0dD874707c4c9eB6Dd72F6Ba7b305e'
-openai.base_url = 'https://yeysai.com/v1/'
+openai.api_key = ''
+openai.base_url = ''
 
-openai.api_key = 'sk-ca2Id5Pi0S643XiQ707eDe4573F848C1B2F78740C8513945'
-openai.base_url = 'https://dzqc.link/v1/'
+openai.api_key = ''
+openai.base_url = ''
 
 model_name_gpt4_0409 = 'gpt-4-turbo-2024-04-09'
 model_name_gpt_4omini = 'gpt-4o-mini'
