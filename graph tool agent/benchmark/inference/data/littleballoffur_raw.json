@@ -1,0 +1,593 @@
+[
+    {
+        "Section_id": "RandomNodeSampler",
+        "Description": "An implementation of random node sampling. Nodes are sampled with uniform probability. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "Number of nodes. Default is 100.",
+                "seed": "Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes randomly.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "DegreeBasedSampler",
+        "Description": "An implementation of degree based sampling. Nodes are sampled proportional to the degree centrality of nodes. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "Number of nodes. Default is 100.",
+                "seed": "Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes proportional to the degree.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "PageRankBasedSampler",
+        "Description": "An implementation of PageRank based sampling. Nodes are sampled proportional to the PageRank score of nodes. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "Number of nodes. Default is 100.",
+                "seed": "Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes randomly proportional to the normalized pagerank score.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "RandomEdgeSampler",
+        "Description": "An implementation of random edge sampling. Edges are sampled with the same uniform probability randomly. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_edges": "int - Number of edges. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling edges randomly.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled edges."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "RandomNodeEdgeSampler",
+        "Description": "An implementation of random node-edge sampling. The algorithm first randomly samples a node. From this node it samples an edge with a neighbor. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_edges": "int - Number of edges. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling edges randomly from randomly sampled nodes.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled edges."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "HybridNodeEdgeSampler",
+        "Description": "An implementation of hybrid node-edge sampling. The algorithm alternates between two sampling methods. (A) Random uniform edge sampling. (B) The algorithm first randomly samples a node. From this node it samples an edge with a neighbor. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_edges": "int - Number of edges. Default is 100.",
+                "seed": "int - Random seed. Default is 42.",
+                "p": "float - Hybridization probability. Default is 0.8."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling edges randomly from randomly sampled nodes or sampling random edges.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled edges."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "RandomEdgeSamplerWithInduction",
+        "Description": "An implementation of random edge sampling with edge set induction. The algorithm randomly samples edges with a fixed probability. Edges between nodes which are already in the sample are retained with an induction step. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_edges": "int - Number of edges. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling edges randomly with induction.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled edges."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "GraphReader",
+        "Description": "Class to read benchmark datasets for the sampling task.",
+        "Field List": {
+            "Parameters": {
+                "dataset": "str - Dataset of interest. One of facebook/wikipedia/github/twitch/deezer/lastfm. Default is \u2018wikipedia\u2019."
+            },
+            "Methods": {
+                "get_graph": {
+                    "Description": "Getting the graph.",
+                    "Return types": {
+                        "graph": "NetworkX graph - Graph of interest."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "DiffusionSampler",
+        "Description": "An implementation of exploration sampling by a diffusion branching process. A simple diffusion which creates an induced subgraph by an incrementally diffusion. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a diffusion process.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "DiffusionTreeSampler",
+        "Description": "An implementation of exploration sampling by a diffusion branching process. A simple diffusion which creates an induced tree by an incrementally diffusion. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a diffusion process.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "ForestFireSampler",
+        "Description": "An implementation of forest fire sampling. The procedure is a stochastic snowball sampling method where the expansion is proportional to the burning probability. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of sampled nodes. Default is 100.",
+                "p": "float - Burning probability. Default is 0.4.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes iteratively with a forest fire sampler.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "SpikyBallSampler",
+        "Description": "An implementation of spiky ball sampling. The procedure is a filtered breadth-first search sampling method where the expansion is is performed over a random subset of neighbors. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of sampled nodes. Default is 100.",
+                "sampling_probability": "float - Edge sampling probability. Default is 0.1.",
+                "initial_nodes_ratio": "float - Initial ratio of sampled nodes. Default is 0.1.",
+                "seed": "int - Random seed. Default is 42.",
+                "max_hops": "int - Number of hops. Default is 100000.",
+                "mode": "str - Sampling procedure, one of: (\"edgeball\", \"hubball\", \"coreball\", \"fireball\", \"firecoreball\"). Default is \u2018fireball\u2019.",
+                "max_visited_nodes_backlog": "int - Maximal number of nodes in restart queue. Default is 100.",
+                "restart_hop_size": "int - Mimimal number of nodes to pop from restart queue. Default is 10.",
+                "distrib_coeff": "float - Proposal distribution power coefficient. Default is 1.0."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes iteratively with a spiky ball sampler.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "CommonNeighborAwareRandomWalkSampler",
+        "Description": "An implementation of node sampling by common neighbor aware random walks. The random walker is biased to visit neighbors that have a lower number of common neighbors. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a single common neighbor aware random walk.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "NonBackTrackingRandomWalkSampler",
+        "Description": "An implementation of node sampling by non back-tracking random walks. The process generates a random walk in which the random walker cannot make steps backwards. This way the tottering behaviour of random walkers can be avoided. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a single non back-tracking random walk.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled edges."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "LoopErasedRandomWalkSampler",
+        "Description": "An implementation of node sampling by loop-erased random walks. The random walkers samples a fixed number of nodes. Only edges that connect so far unconnected nodes to the sampled node set are added to the edge set (cycles are erased). The resulting graph is always an undirected tree. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a single loop-erased random walk.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled edges."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "RandomWalkSampler",
+        "Description": "An implementation of node sampling by random walks. A simple random walker which creates an induced subgraph by walking around. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a single random walk.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "RandomWalkWithRestartSampler",
+        "Description": "An implementation of node sampling by random walks with restart. The process is a discrete random walker on nodes which teleports back to the staring node with a fixed probability. This results in a connected subsample from the original input graph. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42.",
+                "p": "float - Restart probability. Default is 0.1."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a single random walk that restarts.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "MetropolisHastingsRandomWalkSampler",
+        "Description": "An implementation of node sampling by Metropolis Hastings random walks. The random walker has a probabilistic acceptance condition for adding new nodes to the sampled node set. This constraint can be parametrized by the rejection constraint exponent. The sampled graph is always connected. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42.",
+                "alpha": "float - Rejection constraint exponent. Default is 1.0."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a Metropolis Hastings single random walk.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled edges."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "SnowBallSampler",
+        "Description": "An implementation of node sampling by snow ball search. Starting from a source node the algorithm places a fixed number of neighbors in a queue of nodes to explore. The expansion goes on until the target number of sampled vertices is reached. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "k": "int - Bound on degree. Default is 50.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling a graph with randomized snow ball sampling.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "CirculatedNeighborsRandomWalkSampler",
+        "Description": "An implementation of circulated neighbor random walk sampling. The process simulates a random walker. Vertices of a neighbourhood are randomly reshuffled after all of them is sampled from the vicinity of a node. This way the walker can escape closely knit communities. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of sampled nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes iteratively with a circulated neighbor random walk sampler.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "BreadthFirstSearchSampler",
+        "Description": "An implementation of node sampling by breadth first search. The starting node is selected randomly and neighbors are added to the queue by shuffling them randomly.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling a graph with randomized breadth first search.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "DepthFirstSearchSampler",
+        "Description": "An implementation of node sampling by depth first search. The starting node is selected randomly and neighbors are added to the last in first out queue by shuffling them randomly.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling a graph with randomized depth first search.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "RandomWalkWithJumpSampler",
+        "Description": "An implementation of node sampling by random walks with jumps. The process is a discrete random walker on nodes which teleports back to a random node with a fixed probability. This might result in a disconnected subsample from the original input graph. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42.",
+                "p": "float - Jump (teleport) probability. Default is 0.1."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes with a single random walk jumps.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "CommunityStructureExpansionSampler",
+        "Description": "An implementation of community structure preserving expansion sampling. Starting with a random source node the procedure chooses a node which is connected to the already sampled nodes. This node is the one with the largest community expansion score. The extracted subgraph is always connected. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of sampled nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes iteratively with a community structure expansion sampler.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from.",
+                        "start_node": "int, optional - The start node."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "FrontierSampler",
+        "Description": "An implementation of frontier sampling. A fixed number of random walkers traverses the graph and the walkers which make a step are selected randomly. The procedure might result in a disconnected graph as the walks might never connect with each other. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_seeds": "int - Number of seed nodes. Default is 10.",
+                "number_of_nodes": "int - Number of nodes to sample. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes and edges with a frontier sampler.",
+                    "Arg types": {
+                        "graph": "NetworkX graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "RandomNodeNeighborSampler",
+        "Description": "An implementation of random node-neighbor sampling. The process uniformly samples a fixed number of nodes first. Later it induces the neighboring nodes as the node set and the edges between all of the nodes. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling nodes randomly.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Section_id": "ShortestPathSampler",
+        "Description": "An implementation of shortest path sampling. The procedure samples pairs of nodes and chooses a random shortest path between them. Vertices and edges on this shortest path are added to the induces subgraph that is extracted. For details about the algorithm see this paper.",
+        "Field List": {
+            "Parameters": {
+                "number_of_nodes": "int - Number of nodes to sample. Default is 100.",
+                "seed": "int - Random seed. Default is 42."
+            },
+            "Methods": {
+                "sample": {
+                    "Description": "Sampling with a shortest path sampler.",
+                    "Arg types": {
+                        "graph": "NetworkX or NetworKit graph - The graph to be sampled from."
+                    },
+                    "Return types": {
+                        "new_graph": "NetworkX or NetworKit graph - The graph of sampled nodes."
+                    }
+                }
+            }
+        }
+    }
+]
