@@ -2,7 +2,7 @@
 Official Repository of "Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models". NeurIPS 2024
 
 - **Paper Link**: (https://arxiv.org/abs/2409.19667)
-- **Huggingface Link**: (https://huggingface.co/lixin4sky/ProGraph)
+- **Huggingface Link(Models and Datasets)**: (https://huggingface.co/lixin4sky/ProGraph)
 
 # Background
 
