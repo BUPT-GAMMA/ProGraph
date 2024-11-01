@@ -13,11 +13,11 @@ if [ "$model_type" = "closed" ]; then
     # Set default parameters (modify these as needed)
     model_name="gpt-4o-mini"       # Required: specify your model name
     top_k=0                            # Optional: integer between 0-9; 0 means no RAG
-    num_threads=5                      # Optional: integer between 1-32
-    lib_name="igraph"                        # Optional: specify the python library name
-    answer_difficulty="easy"               # Optional: specify the difficulty level
+    num_threads=10                      # Optional: integer between 1-32
+    lib_name=""                        # Optional: specify the python library name
+    answer_difficulty=""               # Optional: specify the difficulty level
     category=""                        # Optional: specify the question category
-    question_type="true/false"                   # Optional: specify the question type
+    question_type=""                   # Optional: specify the question type
 
     # Build the command
     cmd="python close_model.py --model_name \"$model_name\""
