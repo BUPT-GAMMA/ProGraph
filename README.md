@@ -79,8 +79,8 @@ pip install -r requirements.txt
 * **On Windows (PowerShell):**
 
   ```bash
-  $env:API_KEY='your_api_key'
-  $env:BASE_URL='your_base_url'
+  $env:OPENAI_API_KEY='your_api_key'
+  $env:OPENAI_BASE_URL='your_base_url'
   $env:OPENAI_API_BASE='your_api_base'
   $env:GEMINI_API_KEY='your_gemini_api_key'          # Optional
   ```
