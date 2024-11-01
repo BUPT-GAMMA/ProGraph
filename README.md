@@ -113,7 +113,7 @@ question_type=""
 
 - **Note**:
   - For **closed-source models**, ensure you have filled in your **API key** and **`base_url`** in the corresponding Python script (e.g., `close_model.py`).
-  - For **open-source models**, ensure you have downloaded the model and the corresponding **`model_settings`** file, and configured the paths correctly in the script.
+  - For **open-source models**, ensure you have downloaded the model and the corresponding **`model_settings`** file, and configured the paths correctly in the script.[Models and Datasets](https://huggingface.co/lixin4sky/ProGraph)
 
 ### **Run the Script**
 
