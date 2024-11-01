@@ -6,6 +6,10 @@ Official Repository of "Can Large Language Models Analyze Graphs like Profession
 
 # Background
 
+<img width="1000px" alt="" src="figures/table_1_comparision.jpg">
+
+Table 1. Comparisons among different graph analysis benchmarks for LLMs.
+
 Graphs are widely used data structures in the real world (e.g., social networks and recommendation systems). Enabling Large Language Models (LLMs) to process graphs is a key step toward more advanced artificial general intelligence. Recently, many researchers have proposed extending LLMs to scenarios requiring graph understanding and analysis. However, we believe existing research has the following main limitations:
 
 - Existing work relies entirely on LLMs' step-by-step reasoning to solve problems. However, even with Chain of Thought (CoT) prompting, current LLMs' reasoning depth remains shallow. This means that when graph analysis tasks become complex, hallucinations or reasoning errors can easily occur, leading to task failure.
@@ -18,6 +22,10 @@ Graphs are widely used data structures in the real world (e.g., social networks 
 
 # Introduction
 
+<img width="1000px" alt="" src="figures/figure_2_the_pipeline_of_LLM4Graph_dataset_construction_and_corresponding_model_enhancement.jpg">
+
+Figure 1: The pipeline of LLM4Graph dataset construction and corresponding model enhancement(left: close-source models, right: open-source models).
+
 **Core Idea**: To address these limitations, we follow human experts' problem-solving approach and **propose for the first time a method that enables LLMs to solve graph analysis and reasoning problems through code generation**: For example, when calculating shortest paths in a million-node graph, human experts don't attempt to reason about the entire graph mentally, but rather call a few lines of code using Python libraries like NetworkX to solve the problem quickly and accurately. Specifically, when the model performs graph analysis tasks, we guide it to write code and call relevant Python libraries, after which we extract and execute the code from the model's response to obtain answers. This programming-based solution can read graph data from files, thereby bypassing LLMs' context length limitations and applying to graph data analysis at any scale.
 
 To better improve LLMs' performance in writing code for graph analysis problems, we explored the following methods for capability enhancement:
@@ -27,6 +35,10 @@ To better improve LLMs' performance in writing code for graph analysis problems,
 - For closed-source models, we collected API documentation from six Python libraries including NetworkX, and then used Retrieval-Augmented Generation (RAG) technology to let models familiarize themselves with the documentation before answering questions and writing code based on it, thereby improving model performance.
 
 - We analyzed the causes of code writing errors across different models. Based on these analyses, we can further improve both open-source and closed-source models' abilities to write code for solving graph analysis problems in the future.
+
+<img width="1000px" alt="" src="figures/figure_1_the_pipeline_of_ProGraph_benchmark_construction.jpg">
+
+Figure 2: The pipeline of ProGraph benchmark construction.
 
 # Quickstart
 
@@ -38,6 +50,10 @@ comming soon.
 
 - **GraphTeam:** (https://arxiv.org/abs/2410.18032)
 - **Github Link:** (https://github.com/BUPT-GAMMA/GraphTeam)
+
+<img width="1000px" alt="" src="figures/baseline_ours_radar.jpg">
+
+Figure 3. Performance Comparison of GraphTeam versus Baselines Across Six Benchmarks.
 
 # Citation
 
