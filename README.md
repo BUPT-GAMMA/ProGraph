@@ -41,6 +41,7 @@ comming soon.
 
 # Citation
 
+```text
 @misc{li2024largelanguagemodelsanalyze,
       title={Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models}, 
       author={Xin Li and Weize Chen and Qizhi Chu and Haopeng Li and Zhaojun Sun and Ran Li and Chen Qian and Yiwei Wei and Zhiyuan Liu and Chuan Shi and Maosong Sun and Cheng Yang},
@@ -50,6 +51,7 @@ comming soon.
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2409.19667}, 
 }
+```
 
 ```text
 @misc{li2024graphteamfacilitatinglargelanguage,
