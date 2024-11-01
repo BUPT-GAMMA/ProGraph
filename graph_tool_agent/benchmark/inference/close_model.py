@@ -13,19 +13,12 @@ from tqdm import tqdm
 import threading
 from tenacity import retry, wait_exponential, stop_after_attempt
 
-os.environ['OPENAI_API_KEY'] = ''
-os.environ['OPENAI_API_BASE'] = ''
-os.environ['OPENAI_BASE_URL'] = ''
-
-# my own
-openai.api_key = ''
-openai.base_url = ''
+openai.api_key = os.environ.get('OPENAI_API_KEY')
+openai.base_url = os.environ.get('OPENAI_BASE_URL')
 
 os.environ['INDEX_BUILD_TYPE'] = 'json'
 os.environ['RAG_DATA'] = 'data'
 os.environ['RAG_LLM_TEMPERATURE'] = '0.3'
-
-os.environ['API_KEY'] = ''
 
 model_names = [
     'gpt-3.5-turbo',
@@ -85,7 +78,7 @@ from llama_index.core import (
     Settings,
 )
 
-genai.configure(api_key=os.environ["API_KEY"])
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 PERSIST_DIR = "./storageGPT"
 
@@ -158,9 +151,6 @@ def gemini_generate_response(question, model_name='gemini-1.0-pro'):
 
 @retry(wait=wait_exponential(multiplier=1, max=180), stop=stop_after_attempt(30))
 def generate_response(question, model_name = 'gpt-3.5-turbo'):
-    
-    openai.api_key = 'sk-ZgkZgLl9nuWYjPRzD59f1dE8717a47B99e307779A5Ad3737'
-    openai.base_url = 'https://yeysai.com/v1/'
 
     completion = openai.chat.completions.create(
         model=model_name,

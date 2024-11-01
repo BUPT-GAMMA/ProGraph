@@ -14,10 +14,6 @@ import glob
 from tenacity import retry, wait_exponential, stop_after_attempt
 import argparse
 
-os.environ['OPENAI_API_KEY'] = ''
-os.environ['OPENAI_API_BASE'] = ''
-os.environ['OPENAI_BASE_URL'] = ''
-
 os.environ['INDEX_BUILD_TYPE'] = 'json'
 os.environ['RAG_DATA'] = 'data'
 os.environ['RAG_LLM_TEMPERATURE'] = '0.3'

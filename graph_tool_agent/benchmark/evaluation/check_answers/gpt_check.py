@@ -12,8 +12,8 @@ import json
 import pandas as pd
 
 # set openai api key
-openai.api_key = ''
-openai.base_url = ''
+openai.api_key = os.environ.get('OPENAI_API_KEY')
+openai.base_url = os.environ.get('OPENAI_BASE_URL')
 
 
 model_name_gpt4_0409 = 'gpt-4-turbo-2024-04-09'

@@ -66,9 +66,26 @@ With the virtual environment activated, use `pip` to install the project's requi
 pip install -r requirements.txt
 ```
 
----
+## **3: Set OpenAI API Key**
 
-## 3. Run the `./execute.sh` Script
+* **On Unix/Linux:**
+
+  ```bash
+  export OPENAI_API_KEY='your_api_key'
+  export OPENAI_BASE_URL='your_base_url'
+  export OPENAI_API_BASE='your_api_base'
+  export GEMINI_API_KEY='your_gemini_api_key'          # Optional
+  ```
+* **On Windows (PowerShell):**
+
+  ```bash
+  $env:API_KEY='your_api_key'
+  $env:BASE_URL='your_base_url'
+  $env:OPENAI_API_BASE='your_api_base'
+  $env:GEMINI_API_KEY='your_gemini_api_key'          # Optional
+  ```
+
+## 4. Run the `./execute.sh` Script
 
 ### **Edit Script Parameters**
 
@@ -241,3 +258,27 @@ Figure 3. Performance Comparison of GraphTeam versus Baselines Across Six Benchm
       url={https://arxiv.org/abs/2410.18032}, 
 }
 ```
+
+* **On Unix/Linux:**
+  <pre class="!overflow-visible"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center py-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>复制代码</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-bash">export API_KEY='your_api_key'
+  export BASE_URL='your_base_url'
+  export LLAMAINDEX_API_KEY='your_llamaindex_api_key'  # If applicable
+  export GEMINI_API_KEY='your_gemini_api_key'          # Optional
+  </code></div></div></pre>
+* **On Windows (Command Prompt):**
+  <pre class="!overflow-visible"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary">cmd</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center py-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>复制代码</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-cmd">set API_KEY=your_api_key
+  set BASE_URL=your_base_url
+  set LLAMAINDEX_API_KEY=your_llamaindex_api_key  # If applicable
+  set GEMINI_API_KEY=your_gemini_api_key          # Optional
+  </code></div></div></pre>
+* **On Windows (PowerShell):**
+  <pre class="!overflow-visible"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary">powershell</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center py-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>复制代码</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-powershell">$env:API_KEY='your_api_key'
+  $env:BASE_URL='your_base_url'
+  $env:LLAMAINDEX_API_KEY='your_llamaindex_api_key'  # If applicable
+  $env:GEMINI_API_KEY='your_gemini_api_key'          # Optional
+  </code></div></div></pre>
+
+**Note:**
+
+* Ensure there are no spaces around the `=` sign.
+* Environment variables are session-specific. You need to set them again if you open a new terminal session. For a permanent setup, consider adding the export commands to your shell profile (e.g., `~/.bashrc` or `~/.zshrc` for Unix/Linux).
