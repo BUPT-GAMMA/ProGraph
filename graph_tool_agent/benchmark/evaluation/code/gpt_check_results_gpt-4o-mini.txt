@@ -1,0 +1,5 @@
+rag Number of 'True' in all forms: 2.0
+rag Proportion of 'True': 0.4
+Total Number of Questions: 5
+Total Number of Right Questions: 2.0
+Total Proportion of Right Questions: 0.4

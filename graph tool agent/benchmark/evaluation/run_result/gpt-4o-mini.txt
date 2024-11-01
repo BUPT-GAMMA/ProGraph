@@ -1,5 +1,0 @@
-/Users/lixin/downthesky/coding/Python/ProGraph/graph tool agent/benchmark/benchmark/evaluation/gpt-4o-mini/exec_rag_0_littleballoffur.csv: 8 successes, 0 timeouts, and 14 other errors.
-Total: 22 processed, 8 successes, 0 timeouts, 14 errors.
-Success ratio: 36.36%
-Total: 22 processed, 8 successes, 0 timeouts, 14 errors.
-Success ratio: 36.36%

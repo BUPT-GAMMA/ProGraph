@@ -1,0 +1,1668 @@
+[
+    {
+        "Section_id": "EgoNetSplitter",
+        "Description": "An implementation of \u201cEgo-Splitting\u201dfrom the KDD \u201817 paper \u201cEgo-Splitting Framework: from Non-Overlapping to Overlapping Clusters\u201d. The tool first createsthe ego-nets of nodes. A persona-graph is created which is clustered by the Louvain method. The resulting overlappingcluster memberships are stored as a dictionary."
+    },
+    {
+        "Field List > Parameters": {
+            "resolution(float)": "Resolution parameter of Python Louvain. Default 1.0.",
+            "seed(int)": "Random seed value. Default is 42.",
+            "weight(str)": "the key in the graph to use as weight. Default to \u2018weight\u2019. Specify None to force using an unweighted version of the graph."
+        },
+        "Section_id": "EgoNetSplitter"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an Ego-Splitter clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "EgoNetSplitter"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dictionary of lists)": "Cluster memberships."
+            }
+        },
+        "Section_id": "EgoNetSplitter"
+    },
+    {
+        "Section_id": "DANMF",
+        "Description": "An implementation of \u201cDANMF\u201dfrom the CIKM \u201818 paper \u201cDeep Autoencoder-like Nonnegative Matrix Factorization forCommunity Detection\u201d. The procedure uses telescopic non-negative matrix factorizationin order to learn a cluster membership distribution over nodes. The method can beused in an overlapping and non-overlapping way."
+    },
+    {
+        "Field List > Parameters": {
+            "layers(list)": "Autoencoder layer sizes in a list of integers. Default [32, 8].",
+            "pre_iterations(int)": "Number of pre-training epochs. Default 100.",
+            "iterations(int)": "Number of training epochs. Default 100.",
+            "seed(int)": "Random seed for weight initializations. Default 42.",
+            "lamb(float)": "Regularization parameter. Default 0.01.",
+            "seed": "Random seed value. Default is 42."
+        },
+        "Section_id": "DANMF"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a DANMF clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "DANMF"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the bottleneck layer embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The bottleneck layer embedding of nodes."
+            }
+        },
+        "Section_id": "DANMF"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": ": Node cluster memberships."
+            }
+        },
+        "Section_id": "DANMF"
+    },
+    {
+        "Section_id": "NNSED",
+        "Description": "An implementation of \u201cNNSED\u201dfrom the CIKM \u201817 paper \u201cA Non-negative Symmetric Encoder-Decoder Approachfor Community Detection\u201d. The procedure uses non-negative matrix factorizationin order to learn an unnormalized cluster membership distribution over nodes.The method can be used in an overlapping and non-overlapping way."
+    },
+    {
+        "Field List > Parameters": {
+            "layers(int)": "Embedding layer size. Default is 32.",
+            "iterations(int)": "Number of training epochs. Default 10.",
+            "seed(int)": "Random seed for weight initializations. Default 42.",
+            "noise(float)": "Random noise for normalization stability. Default is 10**-6."
+        },
+        "Section_id": "NNSED"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an NNSED clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "NNSED"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the bottleneck layer embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "NNSED"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": "Node cluster memberships."
+            }
+        },
+        "Section_id": "NNSED"
+    },
+    {
+        "Section_id": "MNMF",
+        "Description": "An implementation of \u201cM-NMF\u201dfrom the AAAI \u201817 paper \u201cCommunity Preserving Network Embedding\u201d.The procedure uses joint non-negative matrix factorization with modularitybased regularization in order to learn a cluster membership distributionover nodes. The method can be used in an overlapping and non-overlapping way."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of dimensions. Default is 128.",
+            "clusters(int)": "Number of clusters. Default is 10.",
+            "lambd(float)": "KKT penalty. Default is 0.2",
+            "alpha(float)": "Clustering penalty. Default is 0.05.",
+            "beta(float)": "Modularity regularization penalty. Default is 0.05.",
+            "iterations(int)": "Number of power iterations. Default is 200.",
+            "lower_control(float)": "Floating point overflow control. Default is 10**-15.",
+            "eta(float)": "Similarity mixing parameter. Default is 5.0.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "MNMF"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an M-NMF clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "MNMF"
+    },
+    {
+        "Field List > Methods > get_cluster_centers": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "centers(Numpy array)": "The cluster centers."
+            }
+        },
+        "Section_id": "MNMF"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "MNMF"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": "Node cluster memberships."
+            }
+        },
+        "Section_id": "MNMF"
+    },
+    {
+        "Section_id": "BigClam",
+        "Description": "An implementation of \u201cBigClam\u201dfrom the WSDM \u201813 paper \u201cOverlapping Community Detection at Scale: A Non-negative MatrixFactorization Approach\u201d. The procedure uses gradient ascent to create an embedding which isused for deciding the node-cluster affiliations."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of embedding dimensions. Default 8.",
+            "iterations(int)": "Number of training iterations. Default 50.",
+            "learning_rate(float)": "Gradient ascent learning rate. Default is 0.005.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "BigClam"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a BigClam clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "BigClam"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "BigClam"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": "Node cluster memberships."
+            }
+        },
+        "Section_id": "BigClam"
+    },
+    {
+        "Section_id": "SymmNMF",
+        "Description": "An implementation of \u201cSymm-NMF\u201dfrom the SDM\u201912 paper \u201cSymmetric Nonnegative Matrix Factorization for Graph Clustering\u201d. The proceduredecomposed the second power od the normalized adjacency matrix with an ADMM based non-negative matrixfactorization based technique. This results in a node embedding and each node is associated with anembedding factor in the created latent space."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of dimensions. Default is 32.",
+            "iterations(int)": "Number of power iterations. Default is 200.",
+            "rho(float)": "Regularization tuning parameter. Default is 100.0.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "SymmNMF"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Symm-NMF clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "SymmNMF"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "SymmNMF"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": "Node cluster memberships."
+            }
+        },
+        "Section_id": "SymmNMF"
+    },
+    {
+        "Section_id": "GEMSEC",
+        "Description": "An implementation of \u201cGEMSEC\u201dfrom the ASONAM \u201819 paper \u201cGEMSEC: Graph Embedding with Self Clustering\u201d.The procedure uses random walks to approximate the pointwise mutual informationmatrix obtained by pooling normalized adjacency matrix powers. This matrixis decomposed by an approximate factorization technique which is combinedwith a k-means like clustering cost. A node embedding and clustering arelearned jointly."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 5.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 32.",
+            "negative_samples(int)": "Number of negative samples. Default is 5.",
+            "window_size(int)": "Matrix power order. Default is 5.",
+            "learning_rate(float)": "Gradient descent learning rate. Default is 0.1.",
+            "clusters(int)": "Number of cluster centers. Default is 10.",
+            "gamma(float)": "Clustering cost weight coefficient. Default is 0.1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "GEMSEC"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a GEMSEC model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "GEMSEC"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": ": The embedding of nodes."
+            }
+        },
+        "Section_id": "GEMSEC"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": ": Node cluster memberships."
+            }
+        },
+        "Section_id": "GEMSEC"
+    },
+    {
+        "Section_id": "EdMot",
+        "Description": "An implementation of \u201cEdge Motif Clustering\u201dfrom the KDD \u201819 paper \u201cEdMot: An Edge Enhancement Approach for Motif-aware Community Detection\u201d. The tool first createsthe graph of higher order motifs. This graph is clustered by the Louvain method. The resultingcluster memberships are stored as a dictionary."
+    },
+    {
+        "Field List > Parameters": {
+            "component_count(int)": "Number of extracted motif hypergraph components. Default is 2.",
+            "cutoff(int)": "Motif edge cut-off value. Default is 50.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "EdMot"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an Edge Motif clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "EdMot"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dictionary of ints)": "Cluster memberships."
+            }
+        },
+        "Section_id": "EdMot"
+    },
+    {
+        "Section_id": "SCD",
+        "Description": "An implementation of \u201cSCD\u201d from theWWW \u201814 paper \u201cHigh Quality, Scalable and Parallel Community Detection forLarge Real Graphs\u201d. The procedure greedily optimizes the approximate weightedcommunity clustering metric. First, clusters are built around highly clustered nodes.Second, we refine the initial partition by using the approximate WCC. These refinementshappen for the whole vertex set."
+    },
+    {
+        "Field List > Parameters": {
+            "iterations(int)": "Refinemeent iterations. Default is 25.",
+            "eps(float)": "Epsilon score for zero division correction. Default is 10**-6.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "SCD"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Label Propagation clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "SCD"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": "Node cluster memberships."
+            }
+        },
+        "Section_id": "SCD"
+    },
+    {
+        "Section_id": "LabelPropagation",
+        "Description": "An implementation of \u201cLabel Propagation Clustering\u201dfrom the Physical Review \u201807 paper \u201cNear Linear Time Algorithm to Detect Community Structuresin Large-Scale Networks\u201d. The tool executes a series of label propagations with unique labels.The final labels are used as cluster memberships."
+    },
+    {
+        "Field List > Parameters": {
+            "seed(int)": "Random seed. Default is 42.",
+            "iterations(int)": "Propagation iterations. Default is 100."
+        },
+        "Section_id": "LabelPropagation"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Label Propagation clustering model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be clustered."
+            }
+        },
+        "Section_id": "LabelPropagation"
+    },
+    {
+        "Field List > Methods > get_memberships": {
+            "Description": "Getting the cluster membership of nodes.",
+            "Return types:": {
+                "memberships(dict)": "Node cluster memberships."
+            }
+        },
+        "Section_id": "LabelPropagation"
+    },
+    {
+        "Section_id": "SocioDim",
+        "Description": "An implementation of \u201cSocioDim\u201dfrom the KDD \u201809 paper \u201cRelational Learning via Latent Social Dimensions\u201d.The procedure extracts the eigenvectors corresponding to the largest eigenvaluesof the graph modularity matrix. These vectors are used as the node embedding."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "SocioDim"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Social Dimensions model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "SocioDim"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "SocioDim"
+    },
+    {
+        "Section_id": "RandNE",
+        "Description": "An implementation of \u201cRandNE\u201d from the ICDM \u201818 paper \u201cBillion-scale Network Embedding with Iterative Random Projection\u201d. The procedure uses normalized adjacency matrix basedsmoothing on an orthogonalized random normally generate base node embedding matrix."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of embedding dimension. Default is 128.",
+            "alphas(list)": "Smoothing weights for adjacency matrix powers. Default is [0.5, 0.5].",
+            "seed(int)": "Random seed. Default is 42."
+        },
+        "Section_id": "RandNE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a NetMF model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "RandNE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "RandNE"
+    },
+    {
+        "Section_id": "GLEE",
+        "Description": "An implementation of \u201cGeometric Laplacian Eigenmaps\u201dfrom the Journal of Complex Networks \u201820 paper \u201cGLEE: Geometric Laplacian Eigenmap Embedding\u201d.The procedure extracts the eigenvectors corresponding to the largest eigenvaluesof the graph Laplacian. These vectors are used as the node embedding."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "GLEE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Geometric Laplacian EigenMaps model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "GLEE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "GLEE"
+    },
+    {
+        "Section_id": "Diff2Vec",
+        "Description": "An implementation of \u201cDiff2Vec\u201dfrom the CompleNet \u201818 paper \u201cDiff2Vec: Fast Sequence Based Embedding with Diffusion Graphs\u201d.The procedure creates diffusion trees from every source node in the graph. These graphs are linearizedby a directed Eulerian walk, the walks are used for running the skip-gram algorithm the learn nodelevel neighbourhood based embeddings."
+    },
+    {
+        "Field List > Parameters": {
+            "diffusion_number(int)": "Number of diffusions. Default is 10.",
+            "diffusion_cover(int)": "Number of nodes in diffusion. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 5.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "Diff2Vec"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Diff2Vec model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "Diff2Vec"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "Diff2Vec"
+    },
+    {
+        "Section_id": "NodeSketch",
+        "Description": "An implementation of \u201cNodeSketch\u201dfrom the KDD \u201819 paper \u201cNodeSketch: Highly-Efficient Graph Embeddingsvia Recursive Sketching\u201d. The procedure  starts by sketching the self-loop-augmentedadjacency matrix of the graph to output low-order node embeddings, and then recursivelygenerates k-order node embeddings based on the self-loop-augmented adjacency matrixand (k-1)-order node embeddings."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Embedding dimensions. Default is 32.",
+            "iterations(int)": "Number of iterations (sketch order minus one). Default is 2.",
+            "decay(float)": "Exponential decay rate. Default is 0.01.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "NodeSketch"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a NodeSketch model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "NodeSketch"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "NodeSketch"
+    },
+    {
+        "Section_id": "NetMF",
+        "Description": "An implementation of \u201cNetMF\u201dfrom the WSDM \u201818 paper \u201cNetwork Embedding as Matrix Factorization: UnifyingDeepWalk, LINE, PTE, and Node2Vec\u201d. The procedure uses sparse truncated SVD tolearn embeddings for the pooled powers of the PMI matrix computed from powersof the normalized adjacency matrix."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of embedding dimension. Default is 32.",
+            "iteration(int)": "Number of SVD iterations. Default is 10.",
+            "order(int)": "Number of PMI matrix powers. Default is 2.",
+            "negative_samples(in)": "Number of negative samples. Default is 1.",
+            "seed(int)": "SVD random seed. Default is 42."
+        },
+        "Section_id": "NetMF"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a NetMF model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "NetMF"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "NetMF"
+    },
+    {
+        "Section_id": "BoostNE",
+        "Description": "An implementation of \u201cBoostNE\u201dfrom the ASONAM \u201819 paper \u201cMulti-Level Network Embedding with Boosted Low-RankMatrix Approximation\u201d. The procedure uses non-negative matrix factorizationiteratively to decompose the residuals obtained by previous factorization models.The base target matrix is a pooled sum of adjacency matrix powers."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of individual embedding dimensions. Default is 8.",
+            "iterations(int)": "Number of boosting iterations. Default is 16.",
+            "order(int)": "Number of adjacency matrix powers. Default is 2.",
+            "alpha(float)": "NMF regularization parameter. Default is 0.01.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "BoostNE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a BoostNE model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "BoostNE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "BoostNE"
+    },
+    {
+        "Section_id": "Walklets",
+        "Description": "An implementation of \u201cWalklets\u201dfrom the ASONAM \u201817 paper \u201cDon\u2019t Walk, Skip! Online Learning of Multi-scaleNetwork Embeddings\u201d. The procedure uses random walks to approximate thepointwise mutual information matrix obtained by individual normalizedadjacency matrix powers. These are all decomposed by an approximatefactorization technique and the embeddings are concatenated together."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 10.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 32.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 4.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "Walklets"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Walklets model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "Walklets"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "Walklets"
+    },
+    {
+        "Section_id": "GraRep",
+        "Description": "An implementation of \u201cGraRep\u201dfrom the CIKM \u201815 paper \u201cGraRep: Learning Graph Representations with GlobalStructural Information\u201d. The procedure uses sparse truncated SVD to learnembeddings for the powers of the PMI matrix computed from powers of thenormalized adjacency matrix."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of individual embedding dimensions. Default is 32.",
+            "iteration(int)": "Number of SVD iterations. Default is 10.",
+            "order(int)": "Number of PMI matrix powers. Default is 5.",
+            "seed(int)": "SVD random seed. Default is 42."
+        },
+        "Section_id": "GraRep"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a GraRep model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "GraRep"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "GraRep"
+    },
+    {
+        "Section_id": "DeepWalk",
+        "Description": "An implementation of \u201cDeepWalk\u201dfrom the KDD \u201814 paper \u201cDeepWalk: Online Learning of Social Representations\u201d.The procedure uses random walks to approximate the pointwise mutual informationmatrix obtained by pooling normalized adjacency matrix powers. This matrixis decomposed by an approximate factorization technique."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 10.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 5.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "DeepWalk"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a DeepWalk model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "DeepWalk"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "DeepWalk"
+    },
+    {
+        "Section_id": "Node2Vec",
+        "Description": "An implementation of \u201cNode2Vec\u201dfrom the KDD \u201816 paper \u201cnode2vec: Scalable Feature Learning for Networks\u201d.The procedure uses biased second order random walks to approximate the pointwise mutual informationmatrix obtained by pooling normalized adjacency matrix powers. This matrixis decomposed by an approximate factorization technique."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 10.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "p(float)": "Return parameter (1/p transition probability) to move towards from previous node.",
+            "q(float)": "In-out parameter (1/q transition probability) to move away from previous node.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 5.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "Node2Vec"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a DeepWalk model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "Node2Vec"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "Node2Vec"
+    },
+    {
+        "Section_id": "NMFADMM",
+        "Description": "An implementation of \u201cNMF-ADMM\u201dfrom the ICASSP \u201814 paper \u201cAlternating Direction Method of Multipliers forNon-Negative Matrix Factorization with the Beta-Divergence\u201d. The procedurelearns an embedding of the normalized adjacency matrix with by using the alternatingdirection method of multipliers to solve a non negative matrix factorization problem."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of individual embedding dimensions. Default is 32.",
+            "iterations(int)": "Number of ADMM iterations. Default is 100.",
+            "rho(float)": "ADMM Tuning parameter. Default is 1.0.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "NMFADMM"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an NMF model on the normalized adjacency matrix with ADMM.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "NMFADMM"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "NMFADMM"
+    },
+    {
+        "Section_id": "LaplacianEigenmaps",
+        "Description": "An implementation of \u201cLaplacian Eigenmaps\u201dfrom the NIPS \u201801 paper \u201cLaplacian Eigenmaps and Spectral Techniques for Embedding and Clustering\u201d.The procedure extracts the eigenvectors corresponding to the largest eigenvaluesof the graph Laplacian. These vectors are used as the node embedding."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "maximum_number_of_iterations(int)": "Maximum number of iterations to execute with ARPACK. The value will be multiplied by the number of nodes.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "LaplacianEigenmaps"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Laplacian EigenMaps model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "LaplacianEigenmaps"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "LaplacianEigenmaps"
+    },
+    {
+        "Section_id": "GraphWave",
+        "Description": "An implementation of \u201cGraphWave\u201dfrom the KDD \u201818 paper \u201cLearning Structural Node Embeddings Via Diffusion Wavelets\u201d.The procedure first calculates the graph wavelets using a heat kernel. The waveletsare treated as probability distributions over nodes from a source node. Using thesethe characteristic function is evaluated at certain gird points to learn structuralnode embeddings of the vertices."
+    },
+    {
+        "Field List > Parameters": {
+            "sample_number(int)": "Number of evaluation points. Default is 200.",
+            "step_size(float)": "Grid point step size. Default is 0.1.",
+            "heat_coefficient(float)": "Heat kernel coefficient. Default is 1.0.",
+            "approximation(int)": "Chebyshev polynomial order. Default is 100.",
+            "mechanism(str)": "Wavelet calculation method one of:\n(\"exact\",\"approximate\"). Default is \u2018approximate\u2019.",
+            "switch(int)": "Vertex cardinality when the wavelet calculation method switches to approximation. Default is 1000.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "GraphWave"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a GraphWave model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "GraphWave"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "GraphWave"
+    },
+    {
+        "Section_id": "Role2Vec",
+        "Description": "An implementation of \u201cRole2vec\u201dfrom the IJCAI \u201818 paper \u201cLearning Role-based Graph Embeddings\u201d.The procedure uses random walks to approximate the pointwise mutual informationmatrix obtained by multiplying the pooled adjacency power matrix with astructural feature matrix (in this case Weisfeiler-Lehman features). This wayone gets structural node embeddings."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 10.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 2.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "down_sampling(float)": "Down sampling frequency. Default is 0.0001.",
+            "min_count(int)": "Minimal count of feature occurrences. Default is 10.",
+            "wl_iterations(int)": "Number of Weisfeiler-Lehman hashing iterations. Default is 2.",
+            "seed(int)": "Random seed value. Default is 42.",
+            "erase_base_features(bool)": "Removing the base features. Default is False."
+        },
+        "Section_id": "Role2Vec"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Role2vec model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded."
+            }
+        },
+        "Section_id": "Role2Vec"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "Role2Vec"
+    },
+    {
+        "Section_id": "FeatherNode",
+        "Description": "An implementation of \u201cFEATHER-N\u201dfrom the CIKM \u201820 paper \u201cCharacteristic Functions on Graphs: Birds of a Feather,from Statistical Descriptors to Parametric Models\u201d. The procedureuses characteristic functions of node features with random walk weights to describenode neighborhoods."
+    },
+    {
+        "Field List > Parameters": {
+            "reduction_dimensions(int)": "SVD reduction dimensions. Default is 64.",
+            "svd_iterations(int)": "SVD iteration count. Default is 20.",
+            "theta_max(float)": "Maximal evaluation point. Default is 2.5.",
+            "eval_points(int)": "Number of characteristic function evaluation points. Default is 25.",
+            "order(int)": "Scale - number of adjacency matrix powers. Default is 5.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "FeatherNode"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a FEATHER-N model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO or Numpy array)": "The matrix of node features."
+            }
+        },
+        "Section_id": "FeatherNode"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "FeatherNode"
+    },
+    {
+        "Section_id": "AE",
+        "Description": "An implementation of \u201cAE\u201dfrom the Arxiv \u201819 paper \u201cMUSAE: Multi-Scale Attributed Node Embedding\u201d. Theprocedure does attributed random walks to approximate the pooled adjacencymatrix power node feature matrix product. The matrix is decomposedimplicitly by a Skip-Gram style optimization problem."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 5.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 32.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 3.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "down_sampling(float)": "Down sampling rate in the corpus. Default is 0.0001.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "AE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an AE model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO array)": "The binary matrix of node features."
+            }
+        },
+        "Section_id": "AE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "AE"
+    },
+    {
+        "Section_id": "MUSAE",
+        "Description": "An implementation of \u201cMUSAE\u201dfrom the Arxiv \u201819 paper \u201cMUSAE: Multi-Scale Attributed Node Embedding\u201d. Theprocedure does attributed random walks to approximate the adjacency matrix powernode feature matrix products. The matrices are decomposed implicitly by a Skip-Gramstyle optimizer. The individual embeddings are concatenated together to form amulti-scale attributed node embedding. This way the feature distributions at different scalesare separable."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 5.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 32.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 3.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "down_sampling(float)": "Down sampling rate in the corpus. Default is 0.0001.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "MUSAE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a MUSAE model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO array)": "The binary matrix of node features."
+            }
+        },
+        "Section_id": "MUSAE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "MUSAE"
+    },
+    {
+        "Section_id": "SINE",
+        "Description": "An implementation of \u201cSINE\u201dfrom the ICDM \u201818 paper \u201cSINE: Scalable Incomplete Network Embedding\u201d. Theprocedure implicitly factorizes a joint adjacency matrix power and feature matrix.The decomposition happens on truncated random walks and the adjacency matrix powersare pooled together."
+    },
+    {
+        "Field List > Parameters": {
+            "walk_number(int)": "Number of random walks. Default is 10.",
+            "walk_length(int)": "Length of random walks. Default is 80.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "window_size(int)": "Matrix power order. Default is 5.",
+            "epochs(int)": "Number of epochs. Default is 1.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "SINE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a SINE model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO array)": "The matrix of node features."
+            }
+        },
+        "Section_id": "SINE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "SINE"
+    },
+    {
+        "Section_id": "BANE",
+        "Description": "An implementation of \u201cBANE\u201dfrom the ICDM \u201818 paper \u201cBinarized Attributed Network Embedding Class\u201d. Theprocedure first calculates the truncated SVD of an adjacency - feature matrixproduct. This matrix is further decomposed by a binary CCD based technique."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of embedding dimensions. Default is 32.",
+            "svd_iterations(int)": "SVD iteration count. Default is 20.",
+            "seed(int)": "Random seed. Default is 42.",
+            "alpha(float)": "Kernel matrix inversion parameter. Default is 0.3.",
+            "iterations(int)": "Matrix decomposition iterations. Default is 100.",
+            "binarization_iterations(int)": "Binarization iterations. Default is 20.",
+            "seed": "Random seed value. Default is 42."
+        },
+        "Section_id": "BANE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a BANE model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO or Numpy array)": "The matrix of node features."
+            }
+        },
+        "Section_id": "BANE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "BANE"
+    },
+    {
+        "Section_id": "TENE",
+        "Description": "An implementation of \u201cTENE\u201dfrom the ICPR \u201818 paper \u201cEnhanced Network Embedding with Text Information\u201d. Theprocedure jointly factorizes the adjacency and node feature matrices using alternatingleast squares."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of embedding dimensions. Default is 32.",
+            "lower_control(float)": "Embedding score minimal value. Default is 10**-15.",
+            "alpha(float)": "Adjacency matrix regularization coefficient. Default is 0.1.",
+            "beta(float)": "Feature matrix regularization coefficient. Default is 0.1.",
+            "iterations(int)": "ALS iterations. Default is 200.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "TENE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a TENE model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "T(Scipy COO or Numpy array)": "The matrix of node features."
+            }
+        },
+        "Section_id": "TENE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "TENE"
+    },
+    {
+        "Section_id": "TADW",
+        "Description": "An implementation of \u201cTADW\u201dfrom the IJCAI \u201815 paper \u201cNetwork Representation Learning with Rich Text Information\u201d. Theprocedure uses the node attribute matrix with a factorization matrix to reproduce a powerof the adjacency matrix to create representations."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of embedding dimensions. Default is 32.",
+            "reduction_dimensions(int)": "SVD reduction dimensions. Default is 64.",
+            "svd_iterations(int)": "SVD iteration count. Default is 20.",
+            "seed(int)": "Random seed. Default is 42.",
+            "alpha(float)": "Learning rate. Default is 0.01.",
+            "iterations(int)": "Matrix decomposition iterations. Default is 10.",
+            "lambd(float)": "Regularization coefficient. Default is 10.0."
+        },
+        "Section_id": "TADW"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a TADW model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO or Numpy array)": "The matrix of node features."
+            }
+        },
+        "Section_id": "TADW"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "TADW"
+    },
+    {
+        "Section_id": "FSCNMF",
+        "Description": "An implementation of \u201cFCNMF\u201dfrom the Arxiv \u201818 paper \u201cFusing Structure and Content via Non-negative MatrixFactorization for Embedding Information Networks\u201d. The procedure uses a jointmatrix factorization technique on the adjacency and feature matrices. The nodeand feature embeddings are co-regularized for alignment of the embedding spaces."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of embedding dimensions. Default is 32.",
+            "lower_control(float)": "Embedding score minimal value. Default is 10**-15.",
+            "iterations(int)": "Power iterations. Default is 500.",
+            "alpha_1(float)": "Alignment parameter for adjacency matrix. Default is 1000.0.",
+            "alpha_2(float)": "Adjacency basis regularization. Default is 1.0.",
+            "alpha_3(float)": "Adjacency features regularization. Default is 1.0.",
+            "beta_1(float)": "Alignment parameter for feature matrix. Default is 1000.0.",
+            "beta_2(float)": "Attribute basis regularization. Default is 1.0.",
+            "beta_3(float)": "Attribute basis regularization. Default is 1.0.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "FSCNMF"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an FSCNMF model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO or Numpy array)": "The matrix of node features."
+            }
+        },
+        "Section_id": "FSCNMF"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "FSCNMF"
+    },
+    {
+        "Section_id": "ASNE",
+        "Description": "An implementation of \u201cASNE\u201dfrom the TKDE \u201818 paper \u201cAttributed Social Network Embedding\u201d. Theprocedure implicitly factorizes a concatenated adjacency matrix and feature matrix."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "epochs(int)": "Number of epochs. Default is 100.",
+            "down_sampling(float)": "Down sampling frequency. Default is 0.0001.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.05.",
+            "min_count(int)": "Minimal count of node occurrences. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "ASNE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an ASNE model.",
+            "Arg types:": {
+                "graph(NetworkX graph)": "The graph to be embedded.",
+                "X(Scipy COO array)": "The matrix of node features."
+            }
+        },
+        "Section_id": "ASNE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "ASNE"
+    },
+    {
+        "Section_id": "NEU",
+        "Description": "An implementation of \u201cNEU\u201dfrom the IJCAI 17 paper \u201cFast Network Embedding Enhancement via High Order Proximity Approximation\u201d.The procedure uses an arbitrary embedding and augments it by higher order proximities with a recursivemeta learning algorithm."
+    },
+    {
+        "Field List > Parameters": {
+            "L1(float)": "Weight of lower order proximities. Defauls is 0.5",
+            "L2(float)": "Weight of higher order proximities. Default is 0.25.",
+            "T(int)": "Number of iterations. Default is 1.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "NEU"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an NEU model.",
+            "Arg types:": {
+                "graph * (*)": "",
+                "model * (*)": ""
+            }
+        },
+        "Section_id": "NEU"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the node embedding.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of nodes."
+            }
+        },
+        "Section_id": "NEU"
+    },
+    {
+        "Section_id": "WaveletCharacteristic",
+        "Description": "An implementation of \u201cWaveCharacteristic\u201dfrom the CIKM \u201821 paper \u201cGraph Embedding via Diffusion-Wavelets-Based Node FeatureDistribution Characterization\u201d. The procedure uses characteristic functions ofnode features with wavelet function weights to describe node neighborhoods.These node level features are pooled by mean pooling to create graph level statistics."
+    },
+    {
+        "Field List > Parameters": {
+            "order(int)": "Adjacency matrix powers. Default is 5.",
+            "eval_points(int)": "Number of characteristic function evaluations. Default is 5.",
+            "theta_max(float)": "Largest characteristic function time value. Default is 2.5.",
+            "tau(float)": "Wave function heat - time diffusion. Default is 1.0.",
+            "pooling(str)": "Pooling function appliead to the characteristic functions. Default is \u201cmean\u201d."
+        },
+        "Section_id": "WaveletCharacteristic"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Geometric-Scattering model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "WaveletCharacteristic"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "WaveletCharacteristic"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Infer the graph embeddings.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "WaveletCharacteristic"
+    },
+    {
+        "Section_id": "LDP",
+        "Description": "An implementation of \u201cLDP\u201d from theICLR Representation Learning on Graphs and Manifolds Workshop \u201819 paper \u201cASimple Yet Effective Baseline for Non-Attributed Graph Classification\u201d. Theprocedure calculates histograms of degree profiles. These concatenatedhistograms form the graph representations."
+    },
+    {
+        "Field List > Parameters": {
+            "bins (int) ": "Number of histogram bins. Default is 32."
+        },
+        "Section_id": "LDP"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an LDP model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "LDP"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "LDP"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Infer the embedding of graphs.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "LDP"
+    },
+    {
+        "Section_id": "FeatherGraph",
+        "Description": "An implementation of \u201cFEATHER-G\u201dfrom the CIKM \u201820 paper \u201cCharacteristic Functions on Graphs: Birds of a Feather,from Statistical Descriptors to Parametric Models\u201d. The procedureuses characteristic functions of node features with random walk weights to describenode neighborhoods. These node level features are pooled by mean pooling tocreate graph level statistics."
+    },
+    {
+        "Field List > Parameters": {
+            "order(int)": "Adjacency matrix powers. Default is 5.",
+            "eval_points(int)": "Number of evaluation points. Default is 25.",
+            "theta_max(int)": "Maximal evaluation point value. Default is 2.5.",
+            "seed(int)": "Random seed value. Default is 42.",
+            "pooling(str)": "Permutation invariant pooling function, one of:\n(\"mean\",\"max\",\"min\"). Default is \u201cmean.\u201d"
+        },
+        "Section_id": "FeatherGraph"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a graph level FEATHER model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "FeatherGraph"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "FeatherGraph"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Inferring graph embeddings with a graph level FEATHER model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "FeatherGraph"
+    },
+    {
+        "Section_id": "IGE",
+        "Description": "An implementation of \u201cInvariant Graph Embedding\u201dfrom the ICML 2019 Workshop on Learning and Reasoning with Graph-StructuredData paper \u201cInvariant Embedding for Graph Classification\u201d. The procedurecomputes a mixture of spectral and node embedding based features. Specifically,it uses scattering, eigenvalues and pooled node feature embeddings to creategraph descriptors."
+    },
+    {
+        "Field List > Parameters": {
+            "feature_embedding_dimensions(list)": "Feature embedding dimensions. Default is [3, 5]",
+            "spectral_embedding_dimensions(list)": "Spectral embedding dimensions. Default is [10, 20].",
+            "histogram_bins(list)": "Number of histogram bins. Default is [10, 20].",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "IGE"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an Invariant Graph Embedding model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "IGE"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "IGE"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Infer the embedding of graphs.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "IGE"
+    },
+    {
+        "Section_id": "GeoScattering",
+        "Description": "An implementation of \u201cGeoScattering\u201dfrom the ICML \u201819 paper \u201cGeometric Scattering for Graph Data Analysis\u201d. The procedureuses scattering with wavelet transforms to create graph spectral descriptors. Moments of thewavelet transformed features are used as graph level features for the embedding."
+    },
+    {
+        "Field List > Parameters": {
+            "order(int)": "Adjacency matrix powers. Default is 4.",
+            "moments(int)": "Unnormalized moments considered. Default is 4.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "GeoScattering"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Geometric-Scattering model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "GeoScattering"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "GeoScattering"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Infer the embedding of graphs.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "GeoScattering"
+    },
+    {
+        "Section_id": "GL2Vec",
+        "Description": "An implementation of \u201cGL2Vec\u201dfrom the ICONIP \u201819 paper \u201cGL2vec: Graph Embedding Enriched by Line Graphs with Edge Features\u201d.First, the algorithm creates the line graph of each graph in the graph dataset.The procedure creates Weisfeiler-Lehman tree features for nodes in graphs. Usingthese features a document (graph) - feature co-occurrence matrix is decomposed in orderto generate representations for the graphs."
+    },
+    {
+        "Field List > Parameters": {
+            "wl_iterations(int)": "Number of Weisfeiler-Lehman iterations. Default is 2.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "down_sampling(float)": "Down sampling frequency. Default is 0.0001.",
+            "epochs(int)": "Number of epochs. Default is 10.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.025.",
+            "min_count(int)": "Minimal count of graph feature occurrences. Default is 5.",
+            "seed(int)": "Random seed for the model. Default is 42."
+        },
+        "Section_id": "GL2Vec"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a GL2Vec model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "GL2Vec"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "GL2Vec"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Infer the graph embeddings.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "GL2Vec"
+    },
+    {
+        "Section_id": "NetLSD",
+        "Description": "An implementation of \u201cNetLSD\u201dfrom the KDD \u201818 paper \u201cNetLSD: Hearing the Shape of a Graph\u201d. The procedurecalculate the heat kernel trace of the normalized Laplacian matrix over avector of time scales. If the matrix is large it switches to an approximationof the eigenvalues."
+    },
+    {
+        "Field List > Parameters": {
+            "scale_min(float)": "Time scale interval minimum. Default is -2.0.",
+            "scale_max(float)": "Time scale interval maximum. Default is 2.0.",
+            "scale_steps(int)": "Number of steps in time scale. Default is 250.",
+            "scale_approximations(int)": "Number of eigenvalue approximations. Default is 200.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "NetLSD"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a NetLSD model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "NetLSD"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "NetLSD"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Inferring the NetLSD embeddings.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "NetLSD"
+    },
+    {
+        "Section_id": "SF",
+        "Description": "An implementation of \u201cSF\u201dfrom the NeurIPS Relational Representation Learning Workshop \u201818 paper \u201cA Simple Baseline Algorithm for Graph Classification\u201d.The procedure calculates the k lowest eigenvalues of the normalized Laplacian.If the graph has a lower number of eigenvalues than k the representation is padded with zeros."
+    },
+    {
+        "Field List > Parameters": {
+            "dimensions(int)": "Number of lowest eigenvalues. Default is 128.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "SF"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting an SF model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "SF"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "SF"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Inferring the embedding vectors.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "SF"
+    },
+    {
+        "Section_id": "FGSD",
+        "Description": "An implementation of \u201cFGSD\u201dfrom the NeurIPS \u201817 paper \u201cHunt For The Unique, Stable, Sparse And Fast Feature Learning On Graphs\u201d.The procedure calculates the Moore-Penrose spectrum of the normalized Laplacian.Using this spectrum the histogram of the spectral features is used as a whole graph representation."
+    },
+    {
+        "Field List > Parameters": {
+            "hist_bins(int)": "Number of histogram bins. Default is 200.",
+            "hist_range(int)": "Histogram range considered. Default is 20.",
+            "seed(int)": "Random seed value. Default is 42."
+        },
+        "Section_id": "FGSD"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a FGSD model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "FGSD"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "FGSD"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Inferring the embedding for a list of graphs.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "FGSD"
+    },
+    {
+        "Section_id": "Graph2Vec",
+        "Description": "An implementation of \u201cGraph2Vec\u201dfrom the MLGWorkshop \u201817 paper \u201cGraph2Vec: Learning Distributed Representations of Graphs\u201d.The procedure creates Weisfeiler-Lehman tree features for nodes in graphs. Usingthese features a document (graph) - feature co-occurrence matrix is decomposed in orderto generate representations for the graphs."
+    },
+    {
+        "Field List > Parameters": {
+            "wl_iterations(int)": "Number of Weisfeiler-Lehman iterations. Default is 2.",
+            "attributed(bool)": "Presence of graph attributes. Default is False.",
+            "dimensions(int)": "Dimensionality of embedding. Default is 128.",
+            "workers(int)": "Number of cores. Default is 4.",
+            "down_sampling(float)": "Down sampling frequency. Default is 0.0001.",
+            "epochs(int)": "Number of epochs. Default is 10.",
+            "learning_rate(float)": "HogWild! learning rate. Default is 0.025.",
+            "min_count(int)": "Minimal count of graph feature occurrences. Default is 5.",
+            "seed(int)": "Random seed for the model. Default is 42.",
+            "erase_base_features(bool)": "Erasing the base features. Default is False."
+        },
+        "Section_id": "Graph2Vec"
+    },
+    {
+        "Field List > Methods > fit": {
+            "Description": "Fitting a Graph2Vec model.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            }
+        },
+        "Section_id": "Graph2Vec"
+    },
+    {
+        "Field List > Methods > get_embedding": {
+            "Description": "Getting the embedding of graphs.",
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "Graph2Vec"
+    },
+    {
+        "Field List > Methods > infer": {
+            "Description": "Infer the graph embeddings.",
+            "Arg types:": {
+                "graphs(List of NetworkX graphs)": "The graphs to be embedded."
+            },
+            "Return types:": {
+                "embedding(Numpy array)": "The embedding of graphs."
+            }
+        },
+        "Section_id": "Graph2Vec"
+    }
+]

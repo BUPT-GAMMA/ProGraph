@@ -1,0 +1,40 @@
+/Users/lixin/downthesky/coding/Python/ProGraph/graph tool agent/benchmark/benchmark/evaluation/gpt-4o-mini/exec_rag_0_littleballoffur.csv: 8 successes, 0 timeouts, and 14 other errors.
+Total: 22 processed, 8 successes, 0 timeouts, 14 errors.
+Success ratio: 36.36%
+Total: 22 processed, 8 successes, 0 timeouts, 14 errors.
+Success ratio: 36.36%
+F:\githubCloneProj\ProGraph\graph_tool_agent\benchmark\evaluation\run\../../results/gpt-4o-mini\exec_rag_0_igraph.csv: 2 successes, 0 timeouts, and 3 other errors.
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+F:\githubCloneProj\ProGraph\graph_tool_agent\benchmark\evaluation\run\../../results/gpt-4o-mini\exec_rag_0_igraph.csv: 1 successes, 0 timeouts, and 4 other errors.
+Total: 5 processed, 1 successes, 0 timeouts, 4 errors.
+Success ratio: 20.00%
+Total: 5 processed, 1 successes, 0 timeouts, 4 errors.
+Success ratio: 20.00%
+F:\githubCloneProj\ProGraph\graph_tool_agent\benchmark\evaluation\run\../../results/gpt-4o-mini\exec_rag_0_igraph.csv: 2 successes, 0 timeouts, and 3 other errors.
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+F:\githubCloneProj\ProGraph\graph_tool_agent\benchmark\evaluation\run\../../results/gpt-4o-mini\exec_rag_0_igraph.csv: 2 successes, 0 timeouts, and 3 other errors.
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+F:\githubCloneProj\ProGraph\graph_tool_agent\benchmark\evaluation\run\../../results/gpt-4o-mini\exec_rag_0_igraph.csv: 2 successes, 0 timeouts, and 3 other errors.
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+F:\githubCloneProj\ProGraph\graph_tool_agent\benchmark\evaluation\run\../../results/gpt-4o-mini\exec_rag_0_igraph.csv: 2 successes, 0 timeouts, and 3 other errors.
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+F:\githubCloneProj\ProGraph\graph_tool_agent\benchmark\evaluation\run\../../results/gpt-4o-mini\exec_rag_0_igraph.csv: 2 successes, 0 timeouts, and 3 other errors.
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
+Total: 5 processed, 2 successes, 0 timeouts, 3 errors.
+Success ratio: 40.00%
