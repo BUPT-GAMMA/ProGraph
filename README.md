@@ -42,7 +42,9 @@ Figure 2: The pipeline of ProGraph benchmark construction.
 
 # Quickstart
 
-comming soon.
+- **Python Version**: 3.10.14
+
+
 
 # Next Level
 
