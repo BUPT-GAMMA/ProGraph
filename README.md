@@ -51,7 +51,7 @@ comming soon.
 - **GraphTeam:** (https://arxiv.org/abs/2410.18032)
 - **Github Link:** (https://github.com/BUPT-GAMMA/GraphTeam)
 
-<img width="1000px" alt="" src="figures/baseline_ours_radar.jpg">
+![image-figures/baseline_ours_radar](figures/baseline_ours_radar.jpg)
 
 Figure 3. Performance Comparison of GraphTeam versus Baselines Across Six Benchmarks.
 
