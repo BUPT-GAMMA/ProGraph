@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to inference directory
-cd graph_tool_agent/benchmark/inference
+cd "benchmark and datasets"/benchmark/inference
 
 # Set the model type: 'closed' for closed-source model, 'open' for open-source model
 model_type="closed"  # Change to 'open' if using an open-source model
