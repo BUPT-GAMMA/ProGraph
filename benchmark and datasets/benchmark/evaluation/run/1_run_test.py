@@ -13,7 +13,7 @@ import argparse
 
 DEFAULT_TIMEOUT = 120  # 设置超时时间为120秒
 TIMEOUT_MSG = 'Error: timeout'
-TMP_DIR = 'tmp_execution_output_lixin'  # 临时文件夹名
+TMP_DIR = 'tmp_execution_output'  # 临时文件夹名
 DATA_FOLDER = 'data'  # 目标文件夹
 
 # 0525 new
