@@ -113,6 +113,13 @@ With the virtual environment activated, use `pip` to install the project's requi
 pip install -r requirements.txt
 ```
 
+Notes:
+If you want to use karateclub, you need to use `requirements_karateclub.txt`.
+
+```bash
+pip install -r requirements_karateclub.txt
+```
+
 ## **3: Set OpenAI API Key**
 
 * **On Unix/Linux:**
